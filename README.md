@@ -1,6 +1,6 @@
 # quiztrivia
 
-Quiz Trivia is an engaging and interactive web-based application designed to challenge users with a variety of questions on different topics. This application combines fun and education, making it suitable for players of all ages. With features like score tracking, a countdown timer, and a review of missed questions, Quiz Trivia offers an immersive experience that keeps players entertained and informed.
+Quiz Trivia is an engaging and interactive web-based application designed to challenge users with a variety of questions on different topics. This application combines fun and education, making it suitable for players of all ages. With features like score tracking, a countdown timer, and a review of missed questions, furthermore Quiz Trivia offers an immersive experience that keeps players entertained and informed.
 
 Features
 
