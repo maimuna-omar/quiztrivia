@@ -23,9 +23,14 @@ CSS: Styles the interface, offering a visually appealing and user-friendly desig
 JavaScript: Implements the core functionality, including question handling, timer management, scoring logic, and dynamic interactions.
 
 How to Use
+
 Start the Game: Open the application in any modern web browser.
+
 Answer Questions: Select your response by clicking on the corresponding answer button.
+
 Track Progress: View your score and the remaining time during the quiz.
+
 Review Performance: At the end of the quiz, review the questions you missed.
+
 Replay: Restart the quiz or choose a different category or difficulty level for another round of trivia fun.
 
