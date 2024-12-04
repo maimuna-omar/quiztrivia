@@ -1,18 +1,25 @@
 # quiztrivia
-The Quiz Trivia  is an interactive web-based application designed to challenge users with a variety of questions. It supports features like score tracking, timers and more making it an engaging and educational experience for players of all ages.
-Technologies Used are:
-HTML: Structure and layout of the application.
-CSS: Styling for a visually appealing interface, including dark mode.
-JavaScript: Core logic for handling questions, answers, timers, scores, and dynamic features.
-How to Use the application:
-Start the Game: Open the application in a web browser.
-Answer Questions: Click on the answer buttons to select your response.
-Track Progress: View your score and time remaining during the quiz.
-Review: Check your performance and review missed questions at the end.
-Replay: Restart the quiz or try a different category/difficulty.
-Features are:
-Dynamic Question Loading: Questions are displayed one at a time with multiple-choice options.
-Score Tracking: Keeps track of the player's score throughout the game.
-Timer: Adds a countdown timer for each question to enhance challenge and excitement.
-Leaderboard: Tracks and displays high scores using local storage.
-Missed Questions Review: Players can review the questions they answered incorrectly at the end of the game.
+
+Quiz Trivia is an engaging and interactive web-based application designed to challenge users with a variety of questions on different topics. This application combines fun and education, making it suitable for players of all ages. With features like score tracking, a countdown timer, and a review of missed questions, Quiz Trivia offers an immersive experience that keeps players entertained and informed.
+Features
+
+    Dynamic Question Loading: Questions are displayed one at a time with multiple-choice options, ensuring a seamless flow.
+    Score Tracking: Automatically tracks and updates the player's score during the quiz.
+    Timer: A countdown timer for each question adds a layer of challenge and excitement.
+    Leaderboard: Tracks high scores using local storage and displays the top performances.
+    Missed Questions Review: At the end of the quiz, players can review the questions they answered incorrectly.
+    Replay Options: Users can restart the quiz or choose different categories and difficulty levels for more variety.
+
+Technologies Used
+
+    HTML: Provides the structure and layout of the application.
+    CSS: Styles the interface, offering a visually appealing and user-friendly design, including optional dark mode.
+    JavaScript: Implements the core functionality, including question handling, timer management, scoring logic, and dynamic interactions.
+
+How to Use
+
+    Start the Game: Open the application in any modern web browser.
+    Answer Questions: Select your response by clicking on the corresponding answer button.
+    Track Progress: View your score and the remaining time during the quiz.
+    Review Performance: At the end of the quiz, review the questions you missed.
+    Replay: Restart the quiz or choose a different category or difficulty level for another round of trivia fun.
