@@ -5,10 +5,15 @@ Quiz Trivia is an engaging and interactive web-based application designed to cha
 Features
 
 Dynamic Question Loading: Questions are displayed one at a time with multiple-choice options, ensuring a seamless flow.
+
 Score Tracking: Automatically tracks and updates the player's score during the quiz.
+
 Timer: A countdown timer for each question adds a layer of challenge and excitement.
+
 Leaderboard: Tracks high scores using local storage and displays the top performances.
+
 Missed Questions Review: At the end of the quiz, players can review the questions they answered incorrectly.
+
 Replay Options: Users can restart the quiz or choose different categories and difficulty levels for more variety.
 
 Technologies Used
