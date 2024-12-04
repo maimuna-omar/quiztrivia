@@ -30,6 +30,7 @@ document.getElementById("submit").addEventListener("click", function() {
 });
 
 
+
 //Time Countdown
 let timer;
 let time left = 20; // 20 seconds per question
@@ -53,6 +54,7 @@ clear Interval(timer);
 }
 
 // Call start Timer() when loading each question and stop Timer() when moving to the next.
+
 
 
 //Saves Highscores
