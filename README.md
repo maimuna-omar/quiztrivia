@@ -4,7 +4,7 @@ Quiz Trivia is an engaging and interactive web-based application designed to cha
 
 Features
 
-Dynamic Question Loading: Questions are displayed one at a time with multiple-choice options, ensuring a seamless flow.
+Dynamic Question Loading: Questions are showed one at a time with multiple-choice options, ensuring a seamless flow.
 
 Score Tracking: Automatically tracks and updates the player's score during the quiz.
 
