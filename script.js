@@ -115,81 +115,79 @@ const questions = [
   let currentQuestionIndex = 0;
   let score = 0;
   
-  // Function to display the current question and options
-  function displayQuestion() {
-    const questionElement = document.getElementById("question");
-    const optionsElement = document.getElementById("options");
-  
-    const currentQuestion = questions[currentQuestionIndex];
-    questionElement.textContent = currentQuestion.question;
-  
-    // Clear previous options and dynamically add new ones
-    optionsElement.innerHTML = ""; 
-    currentQuestion.options.forEach((option, index) => {
-      const optionHTML = `
-        <label>
-          <input type="radio" name="answer" value="${String.fromCharCode(97 + index)}">
-          ${option}
-        </label>
-        <br>
+  const quizContainer = document.getElementById("quiz");
+    const submitButton = document.getElementById("submit");
+    const timerElement = document.getElementById("timer");
+    const scoreElement = document.getElementById("score");
+    const scoreValueElement = document.getElementById("scoreValue");
+    const resultElement = document.getElementById("result");
+
+    function loadQuestion() {
+      const currentQuestion = quizData[currentQuestionIndex];
+      quizContainer.innerHTML = `
+        <p>${currentQuestion.question}</p>
+        ${currentQuestion.options
+          .map(
+            (option, index) => `
+          <div>
+            <input type="radio" name="option" id="option${index}" value="${option}">
+            <label for="option${index}">${option}</label>
+          </div>
+        `
+          )
+          .join("")}
       `;
-      optionsElement.innerHTML += optionHTML;
-    });
-  }
-  
-  // Function to handle answer submission
-  function submitAnswer() {
-    const selectedOption = document.querySelector('input[name="answer"]:checked');
-    if (!selectedOption) {
-      alert("Please select an answer before submitting!");
-      return;
     }
-  
-    // Check if the selected answer is correct
-    const selectedValue = selectedOption.value;
-    const correctAnswer = questions[currentQuestionIndex].correct;
-    if (selectedValue === correctAnswer) {
-      score++;
+
+    function showFinalScore() {
+      quizContainer.innerHTML = "";
+      submitButton.style.display = "none";
+      scoreElement.style.display = "block";
+      scoreValueElement.textContent = `${score}/${quizData.length}`;
+      resultElement.style.display = "block";
+      resultElement.textContent =
+        score >= quizData.length / 2
+          ? "Great job!"
+          : "Keep practicing.";
     }
-  
-    // Move to the next question or show the final result
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-      displayQuestion();
-    } else {
-      showFinalResult();
+
+    function startTimer() {
+      let timeLeft = 20;
+      timerElement.textContent = `Time left: ${timeLeft}s`;
+      const timer = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `Time left: ${timeLeft}s`;
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          alert("Time's up!");
+          handleSubmit();
+        }
+      }, 1000);
     }
-  }
-  
-  // Function to display the final score and feedback
-  function showFinalResult() {
-    const quizContainer = document.getElementById("quiz-container");
-    const resultContainer = document.getElementById("result");
-  
-    quizContainer.style.display = "none"; // Hide the quiz
-    resultContainer.style.display = "block"; // Show the result
-  
-    // Generate feedback based on the score
-    let feedback;
-    if (score === questions.length) {
-      feedback = "Excellent work! You got all the answers correct.";
-    } else if (score >= questions.length / 2) {
-      feedback = "Good job! You answered more than half correctly.";
-    } else {
-      feedback = "Keep practicing to improve your understanding!";
+
+    function handleSubmit() {
+      const selectedOption = document.querySelector(
+        'input[name="option"]:checked'
+      );
+      if (selectedOption) {
+        if (selectedOption.value === quizData[currentQuestionIndex].correct) {
+          score++;
+        }
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizData.length) {
+          loadQuestion();
+          startTimer();
+        } else {
+          showFinalScore();
+        }
+      } else {
+        alert("Please select an option!");
+      }
     }
-  
-    // Show the final score and feedback
-    resultContainer.innerHTML = `
-      <h2>Quiz Completed!</h2>
-      <p>Your score: ${score}/${questions.length}</p>
-      <p>${feedback}</p>
-    `;
-  }
-  
-  // Initialize the quiz on page load
-  window.onload = displayQuestion;
-  
-  // Add event listener for the submit button
-  document.getElementById("submit").addEventListener("click", submitAnswer);
+
+    submitButton.addEventListener("click", handleSubmit);
+
+    // Load the first question
+    loadQuestion();
+    startTimer();
   
